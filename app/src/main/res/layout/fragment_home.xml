@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@android:color/background_light"
+    tools:context="host.abhi.rmcalc.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/noRepsHeading"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="@string/repsTitle"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/enteredWeightHeading"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enteredWeight"
+        android:layout_width="120dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:filterTouchesWhenObscured="false"
+        android:gravity="center"
+        android:hint="@string/zero"
+        android:inputType="textPersonName|numberDecimal"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toStartOf="@+id/noReps"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enteredWeightHeading"
+        tools:focusableInTouchMode="true" />
+
+    <TextView
+        android:id="@+id/oneRepMax"
+        android:layout_width="395dp"
+        android:layout_height="144dp"
+        android:layout_marginBottom="160dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
+        android:textColor="?attr/colorPrimaryDark"
+        android:textSize="100sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oneRepMaxHeading" />
+
+    <NumberPicker
+        android:id="@+id/noReps"
+        android:layout_width="120dp"
+        android:layout_height="109dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/enteredWeight"
+        app:layout_constraintTop_toBottomOf="@+id/noRepsHeading" />
+
+    <TextView
+        android:id="@+id/enteredWeightHeading"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="@string/weightTitle"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/noRepsHeading"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/oneRepMaxHeading"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="160dp"
+        android:background="@color/colorPrimary"
+        android:cursorVisible="false"
+        android:gravity="center"
+        android:text="@string/resultTitle"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/oneRepMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
