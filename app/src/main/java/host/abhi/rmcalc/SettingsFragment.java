@@ -73,19 +73,14 @@ public class SettingsFragment extends Fragment {
 
 
         // Fetch from preferences on load
-        String weight = getBodyWeight();
-        bodyWeight.setText(weight);
-
+        setBodyWeight();
         super.onViewCreated(view, savedInstanceState);
     }
 
-    public String getBodyWeight() {
-        String weight = "";
+    public void setBodyWeight() {
         SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, 0);
         if (prefs.contains("body_weight")) {
-            weight = prefs.getString("body_weight", "");
+            bodyWeight.setText(prefs.getString("body_weight", ""));
         }
-        return weight;
     }
-
 }

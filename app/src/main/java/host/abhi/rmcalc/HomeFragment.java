@@ -7,12 +7,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -45,6 +47,11 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         setupUI(getView());
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     public void setupUI(View view) {
@@ -141,10 +148,15 @@ public class HomeFragment extends Fragment {
         textResult.setText(String.format("%3.1f", oneRM));
 
         Double bodyWeight = getBodyWeight();
-        oneRMHeading.setText(String.format("1RM: %3.2f x BW", oneRM/bodyWeight));
+        if (bodyWeight != 0.0) {
+            oneRMHeading.setText(String.format("1RM: %3.2f x BW", oneRM/bodyWeight));
+        } else {
+            oneRMHeading.setText("1RM: Please set BW");
+        }
     }
 
     public void updateResult() {
+        Log.d("HomeFragment", "updateResult called..");
         double weight = getLiftedWeight();
         if (weight != 0.0) {
             // off-by-1 as SeekBar starts from 0
